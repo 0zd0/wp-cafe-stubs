@@ -1,0 +1,2381 @@
+<?php
+/**
+ * Generated stub declarations for WP Cafe.
+ * @see https://product.themewinter.com/wpcafe
+ * @see https://github.com/0zd0/wp-cafe-stubs
+ */
+
+namespace WpCafe {
+    /**
+     * Wp\Cafe autoloader.
+     * Handles dynamically loading classes only when needed.
+     *
+     * @since 1.0.0
+     */
+    class Autoloader
+    {
+        /**
+         * Run autoloader.
+         * Register a function as `__autoload()` implementation.
+         *
+         * @since 1.0.0
+         * @access public
+         */
+        public static function run()
+        {
+        }
+    }
+    final class Bootstrap
+    {
+        public function init()
+        {
+        }
+        /**
+         * do stuff on active
+         *
+         * @return void
+         */
+        public function wpc_active()
+        {
+        }
+        /**
+         * do stuff on deactive
+         *
+         * @return void
+         */
+        public function wpc_deactive()
+        {
+        }
+        public static function instance()
+        {
+        }
+        /**
+         * Load all class
+         *
+         * @return void
+         */
+        public function wpc_init_plugin()
+        {
+        }
+        /**
+         * Divi Builder class filter
+         *
+         * @return void
+         */
+        function wpc_divi_classes($classes)
+        {
+        }
+        /**
+         * Load on plugin
+         *
+         * @return void
+         */
+        public function wpc_admin_notice_woocommerce_not_active()
+        {
+        }
+        public function admin_notice_wpcafe_pro_not_active()
+        {
+        }
+        /**
+         * Register shortcode function
+         *
+         * @return void
+         */
+        public function register_shortcodes()
+        {
+        }
+        /**
+         * Keep open menu function
+         *
+         */
+        public function wpc_keep_cpt_menu_open($parent_file)
+        {
+        }
+        /**
+         * Show buy-pro menu if pro plugin not active
+         *
+         * @return void
+         */
+        public function handle_buy_pro_menu()
+        {
+        }
+        /**
+         * Show menu for get-help
+         * Show menu for upgrade-te-premium if pro version not active
+         *
+         * @return void
+         */
+        public function handle_get_help_and_upgrade_menu()
+        {
+        }
+    }
+}
+namespace WpCafe\Traits {
+    /**
+     * Instance of class
+     */
+    trait Wpc_Singleton
+    {
+        private static $instance;
+        /**
+         * Wpc_Singleton trait
+         */
+        public static function instance()
+        {
+        }
+    }
+}
+namespace WpCafe\Core\Action {
+    /**
+     * Settings option  saving
+     */
+    class Wpc_Action
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        public $response = [];
+        /**
+         * Return response
+         */
+        function __construct($option_name = 'wpcafe_reservation_settings_options')
+        {
+        }
+        /**
+         * Update settings
+         */
+        public function wpc_store($form_id, $form_setting)
+        {
+        }
+        /**
+         * Sanitize field
+         */
+        public function wpc_sanitize($form_setting)
+        {
+        }
+        /**
+         * Update field
+         */
+        public function wpc_update_option_settings()
+        {
+        }
+    }
+    /**
+     * All ajax action
+     */
+    class Wpc_Ajax_Action
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        /**
+         * Ajax function call
+         */
+        public function init()
+        {
+        }
+        /**
+         * Reservation form submit check
+         */
+        public function wpc_check_for_submission($wpc_reservation = [], $order_id = null)
+        {
+        }
+        /**
+         * Filter menu by food location
+         */
+        public function filter_food_location()
+        {
+        }
+        /**
+         * Responsible for seat capacity
+         */
+        public function wpc_seat_capacity()
+        {
+        }
+        /**
+         * Filter chart data for overview page
+         */
+        public function filter_chart_data()
+        {
+        }
+    }
+}
+namespace WpCafe\Core\Base {
+    class Api_Handler
+    {
+        public $prefix = '';
+        public $param = '';
+        public $request = null;
+        public function __construct()
+        {
+        }
+        public function config()
+        {
+        }
+        public function init()
+        {
+        }
+        public function callback($request)
+        {
+        }
+    }
+    /**
+     * This wrapper class is responsible for
+     * Generate Settings option markup
+     */
+    abstract class Setting_field
+    {
+        public function get_field_block($item = null, $key = '', $data = [])
+        {
+        }
+        /**
+         * Render text input field
+         *
+         * @param [array] $item
+         * @param [string]$key
+         * @param [array] $data
+         * @return void
+         */
+        public function get_text_input($item, $key, $data)
+        {
+        }
+        /**
+         * Render text input field
+         *
+         * @param [array] $item
+         * @param [string]$key
+         * @param [array] $data
+         * @return void
+         */
+        public function get_text_area_input($item, $key, $data)
+        {
+        }
+        /**
+         * Render number input field
+         *
+         * @param [array] $item
+         * @param [string] $key
+         * @param [array] $data
+         * @return void
+         */
+        public function get_number_input($item, $key, $data)
+        {
+        }
+        /**
+         * Render dropdown select option input
+         */
+        public function get_select_single($item, $key, $data)
+        {
+        }
+        /**
+         * Multiple select option
+         *
+         * @param [array] $item
+         * @param [string]$key
+         * @return void
+         */
+        public function get_select2($item, $key, $data)
+        {
+        }
+        /**
+         * Checkbox input
+         *
+         * @param [array] $item
+         * @param [string]$key
+         * @return void
+         */
+        public function get_checkbox_input($item, $key, $data)
+        {
+        }
+        /**
+         * Render wp editor
+         *
+         * @param [array] $item
+         * @param [string]$key
+         * @param [array] $data
+         * @return void
+         */
+        public function get_wp_editor($item, $key, $data)
+        {
+        }
+        /**
+         * Render audio input
+         *
+         * @param [array] $item
+         * @param [string]$key
+         * @param [array] $data
+         * @return void
+         */
+        public function get_media_input($item, $key, $data)
+        {
+        }
+    }
+    class Config extends \WpCafe\Core\Base\Setting_field
+    {
+        /**
+         * Call base class for generate markup
+         */
+        public function get_field_markup($item = null, $key = '', $data = [])
+        {
+        }
+    }
+    /**
+     * custom Post type class
+     */
+    class Wpc_Custom_Post
+    {
+        /**
+         * Call action
+         *
+         * @param [type] $textdomain
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Create custom post
+         */
+        public function xs_init($type, $singular_label, $plural_label, $settings = [])
+        {
+        }
+        /**
+         * Register custom post
+         *
+         * @return void
+         */
+        public function register_custom_post()
+        {
+        }
+    }
+    class Wpc_Taxonomies
+    {
+        protected $textdomain;
+        protected $taxonomies;
+        /**
+         * Call action
+         *
+         * @param [type] $textdomain
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Create taxonomies
+         *
+         * @param [type] $type
+         * @param [type] $singular_label
+         * @param [type] $plural_label
+         * @param [type] $post_types
+         * @param array $settings
+         * @return void
+         */
+        public function xs_init($type, $singular_label, $plural_label, $slug, $post_types, $settings = [])
+        {
+        }
+        /**
+         * register taxonomies
+         *
+         * @return void
+         */
+        public function register_taxonomy()
+        {
+        }
+    }
+    class Wpc_Menu_Build
+    {
+        /**
+         * Load all menu and sub menus
+         *
+         * @return void
+         */
+        public function __construct($pages, $name, $sub_pages)
+        {
+        }
+        public function menu_register()
+        {
+        }
+        /**
+         * Create main page array function
+         */
+        public function add_pages($pages)
+        {
+        }
+        /**
+         * merge all page function
+         */
+        public function add_sub_pages($pages)
+        {
+        }
+        /**
+         * Create menu page
+         * @param [type] $cb_function
+         */
+        public function sub_menu_pages($title = null)
+        {
+        }
+        /**
+         * Create admin and sub menu
+         */
+        public function wpc_add_admin_menu()
+        {
+        }
+    }
+    abstract class Wpc_Repeater_Metabox
+    {
+        protected function get_repeater_markup($item = null, $key = '', $data = [], $rep_key = '')
+        {
+        }
+        public function get_repeater_select_single($item, $key)
+        {
+        }
+        public function get_repeater_upload($item, $key, $data)
+        {
+        }
+        public function get_repeater_text_input($item, $key, $data)
+        {
+        }
+        public function get_repeater_textarea($item, $key, $data)
+        {
+        }
+        public function get_repeater_radio($item, $key, $data)
+        {
+        }
+        public function get_repeater_select2($item, $key, $data)
+        {
+        }
+    }
+    abstract class Wpc_Metabox extends \WpCafe\Core\Base\Wpc_Repeater_Metabox
+    {
+        protected function is_secured($nonce_field, $action, $post_id, $post)
+        {
+        }
+        public function display_callback($post)
+        {
+        }
+        function save_meta_box_data($post_id)
+        {
+        }
+        protected function update($post_arr, $fields = null)
+        {
+        }
+        protected function get_markup($item = null, $key = '')
+        {
+        }
+        public function get_wp_repeater($item, $key)
+        {
+        }
+        /**
+         * Hidden field
+         */
+        public function get_hidden_input($item, $key)
+        {
+        }
+        public function get_text_input($item, $key)
+        {
+        }
+        public function get_tel_input($item, $key)
+        {
+        }
+        public function get_email_input($item, $key)
+        {
+        }
+        public function get_radio_input($item, $key)
+        {
+        }
+        public function get_select2($item, $key)
+        {
+        }
+        public function get_select_single($item, $key)
+        {
+        }
+        public function get_url_input($item, $key)
+        {
+        }
+        public function get_upload($item, $key)
+        {
+        }
+        public function get_textarea($item, $key)
+        {
+        }
+        public function get_wp_editor($item, $key)
+        {
+        }
+        public function get_checkbox_input($item, $key)
+        {
+        }
+    }
+    class Wpc_Settings_Field
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        /**
+         * set key option function
+         */
+        public function __construct()
+        {
+        }
+        /**
+         * Get all settings
+         */
+        public function get_settings_option($key = null, $default = null)
+        {
+        }
+        public function set_option($key, $default = null)
+        {
+        }
+        /**
+         * Convert time in 24
+         *
+         */
+        public function convert_time_24($time)
+        {
+        }
+        /**
+         * Compare start time and end time 
+         */
+        public function compare_time($start_arr, $end_arr)
+        {
+        }
+        /**
+         * Submit action of settings
+         */
+        public function form_handler()
+        {
+        }
+    }
+}
+namespace WpCafe\Core {
+    /**
+     * Load all admin class
+     */
+    class Core
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        /**
+         *  Call admin function
+         */
+        function init()
+        {
+        }
+        /**
+         * Filtered style for div attr
+         */
+        public function add_filtered_style_attr($styles)
+        {
+        }
+        /**
+         * Register  for backend
+         */
+        public function register_backend_actions()
+        {
+        }
+        /**
+         * Register modules
+         */
+        public function register_modules()
+        {
+        }
+        /**
+         * Save settings
+         */
+        public function dispatch_actions($setting_field)
+        {
+        }
+        /**
+         * update date/time format from saved settings
+         *
+         * @return void
+         */
+        public function update_date_time_format_from_wp()
+        {
+        }
+        /**
+         * merge wp default date formats with wpcafe custom formats
+         *
+         * @param array $all_date_formats
+         * @return array
+         */
+        public function merge_date_formats($all_date_formats = [])
+        {
+        }
+    }
+}
+namespace WpCafe\Core\Enqueue {
+    /**
+     * Enqueue all css and js file class
+     */
+    class Wpc_Enqueue
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        /**
+         * Main calling function
+         */
+        public function init()
+        {
+        }
+        /**
+         * all js files function
+         */
+        public function admin_get_scripts()
+        {
+        }
+        /**
+         * all css files function
+         *
+         * @param Type $var
+         */
+        public function admin_get_styles()
+        {
+        }
+        /**
+         * Enqueue admin js and css function
+         *
+         * @param  $var
+         */
+        public function admin_enqueue_assets()
+        {
+        }
+        /**
+         * Make obj to send localize script
+         */
+        public function wpc_settings_obj()
+        {
+        }
+        /**
+         * all js files function
+         */
+        public function frontend_get_scripts()
+        {
+        }
+        /**
+         * all css files function
+         */
+        public function frontend_get_styles()
+        {
+        }
+        /**
+         * Enqueue admin js and css function
+         */
+        public function frontend_enqueue_assets()
+        {
+        }
+        /**
+         *elementor editor css loaded
+         */
+        public function elementor_editor_css()
+        {
+        }
+        /**
+         *elementor js loaded
+         */
+        public function elementor_js()
+        {
+        }
+        /**
+         * Enqueue woocommerce cart fragments js
+         * It's needed for mini cart ajax update
+         * Added in version WPCafe 2.2.16
+         */
+        public function woocommerce_enqueue_assets()
+        {
+        }
+    }
+}
+namespace WpCafe\Core\Menu {
+    /**
+     * Menu handle class
+     */
+    class Wpc_Menus
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        public $settings;
+        /**
+         * Call all action
+         */
+        public function init()
+        {
+        }
+        /**
+         * Product addons callback
+         */
+        public function addons_menu_pages()
+        {
+        }
+        /**
+         * Table selection callback
+         */
+        public function wpc_table_layout()
+        {
+        }
+        /**
+         * Show Dashboard Page
+         */
+        public function dashboard_view()
+        {
+        }
+        /**
+         * Show Settings Page
+         */
+        public function admin_settings_view()
+        {
+        }
+        /**
+         * Show Shortcode Page
+         */
+        public function available_shortcode_view()
+        {
+        }
+        /**
+         * Show Tools Page
+         */
+        public function wpc_tools_view()
+        {
+        }
+        /**
+         * WpCafe app settings page
+         */
+        public function wpc_app_banner()
+        {
+        }
+    }
+}
+namespace WpCafe\Core\Metaboxes {
+    class Wpc_Reservation_Meta extends \WpCafe\Core\Base\Wpc_Metabox
+    {
+        public $metabox_id = 'wpc_reservation_meta';
+        public $reservation_fields = [];
+        public $cpt_id = 'wpc_reservation';
+        /**
+         * Register meta box
+         *
+         * @return void
+         */
+        public function register_meta_boxes()
+        {
+        }
+        /**
+         * Pass meta box array
+         */
+        public function wpc_default_metabox_fields()
+        {
+        }
+        /**
+         * Save metabox title
+         *
+         */
+        public function wpc_set_reservation_title($data, $postarr)
+        {
+        }
+        /**
+         * Add reservation meta
+         *
+         * @param [type] $postarr
+         * @return void
+         */
+        public function update_reservation_meta($postarr)
+        {
+        }
+    }
+}
+namespace WpCafe\Core\Migrations {
+    class Migrations
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        /**
+         * Main Function 
+         *
+         * @return void
+         */
+        public function init()
+        {
+        }
+        /**
+         * migrations booking date to Y-m-d
+         *
+         * @return void
+         */
+        public function migrate_booking_date()
+        {
+        }
+    }
+}
+namespace WpCafe\Core\Modules\Food_Menu {
+    class Hooks
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        /*** Food Order report start ***/
+        /**
+         * Dashboard overview
+         */
+        public function monthly_report()
+        {
+        }
+        /**
+         * Get monthly customer list
+         */
+        public function get_customer_list()
+        {
+        }
+        /**
+         * get sales details
+         */
+        public function get_sales_details($status)
+        {
+        }
+        /*** Food Order report end ***/
+        /**
+         * Fire all hooks
+         */
+        public function init()
+        {
+        }
+        /**
+         * Remove astra theme conflict issue
+         *
+         * @return void
+         */
+        public function remove_astra_mini_cart()
+        {
+        }
+        /**
+         * Discard items from cart , if
+         * Items is adding from different location
+         * to cart
+         */
+        public function food_location_add_to_cart_validation($passed, $product_id, $quantity)
+        {
+        }
+        /**
+         * Show Food location , order meta in order details
+         */
+        public function show_order_details_meta($order)
+        {
+        }
+        /**
+         * after successful checkout, some data are returned from woocommerce
+         * we can use these data to update our own data storage / tables
+         */
+        public function wpc_checkout_callback($order_id)
+        {
+        }
+        /**
+         * Change currency symbol based on WooCommerce settings
+         */
+        public static function get_price_with_currency_symbol($price)
+        {
+        }
+    }
+}
+namespace WpCafe\Core\Modules\Guten_Block\Inc\Blocks {
+    class Food_List
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        function init()
+        {
+        }
+        function register_food_list_block()
+        {
+        }
+        // food menu list block callback
+        function wpc_food_menu_list_callback($settings)
+        {
+        }
+    }
+    class Food_Tab
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        function init()
+        {
+        }
+        function register_food_tab_block()
+        {
+        }
+        // food menu tab block callback
+        function wpc_food_menu_tab_callback($settings)
+        {
+        }
+    }
+    class Location
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        function init()
+        {
+        }
+        function register_location_block()
+        {
+        }
+        function register_location_block_scripts()
+        {
+        }
+        function wpc_location_callback()
+        {
+        }
+    }
+    class Pickup_Delivery
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        function init()
+        {
+        }
+        function register_pickup_delivery_block()
+        {
+        }
+        function register_pickup_delivery_block_scripts()
+        {
+        }
+        // pickup delivery checkout page block callback
+        function wpc_pickup_delivery_callback()
+        {
+        }
+    }
+}
+namespace WpCafe\Core\Modules\Guten_Block\Inc {
+    class Register_Blocks
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        /**
+         *  Call admin function
+         */
+        function init()
+        {
+        }
+        public function wpc_block_category($categories, $post)
+        {
+        }
+        //register block assets
+        public function wpc_block_assets()
+        {
+        }
+        public function initialize_blocks()
+        {
+        }
+    }
+}
+namespace WpCafe\Core\Modules\Reservation {
+    class Hooks
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        /**
+         * Make array for chart
+         */
+        public static function chart_format_data($data)
+        {
+        }
+        /**
+         * Generate unique slug
+         * prefix_type1_type2_day_row
+         * slug_single_weekly_all_0
+         * 
+         * Check current slot and schedule
+         */
+        public static function check_current_slot()
+        {
+        }
+        /**
+         * Filter data for chart
+         */
+        public function filter_report_by_date($type, $date_range)
+        {
+        }
+        /**
+         * get monthly reservation details
+         */
+        public function get_monthly_reservation()
+        {
+        }
+        // Convert reservation form email template tags
+        public function filter_template_tags($reservation_id, $content, $invoice = "")
+        {
+        }
+        public function get_extra_fields($reservation_id)
+        {
+        }
+    }
+    class Wpc_Reservation_Report
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        /**
+         * Class constructor.
+         */
+        public function init()
+        {
+        }
+        /**
+         * Reservation report order by desc
+         */
+        public function reservation_report_desc_order($wp_query)
+        {
+        }
+        /**
+         * Remove edit bulk action
+         */
+        public function custom_bulk_actions($actions)
+        {
+        }
+        /**
+         * Column name
+         */
+        public function wpc_reservation_post_columns($columns)
+        {
+        }
+        /**
+         * Return row
+         */
+        public function wpc_reservation_custom_column($column, $post_id)
+        {
+        }
+        /**
+         * Reservation report filter by status dropdown
+         */
+        public function reservation_report_filter_status_dropdown()
+        {
+        }
+        /**
+         *  Reservation report filter query based on the dropdown value
+         */
+        public function reservation_filter_status_by_meta($query)
+        {
+        }
+    }
+}
+namespace WpCafe\Core\Post_type {
+    /**
+     * create post type class
+     */
+    class Cpt
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        public function init()
+        {
+        }
+        /**
+         * add header in reservation list page
+         */
+        public function reservation_post_add_header()
+        {
+        }
+        /**
+         * Add custom post reservation
+         */
+        public function register_reservation_cpt($service)
+        {
+        }
+        //translatable reservation texts
+        public function reservation_slug_register_post_type_args($args, $post_type)
+        {
+        }
+    }
+}
+namespace WpCafe\Core\Settings {
+    class Wpc_Key_Options extends \WpCafe\Core\Base\Config
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        public $wpc_settings_field;
+        /**
+         * Settings field
+         *
+         * @return void
+         */
+        public function wpc_key_options()
+        {
+        }
+        /**
+         * Short code View
+         *
+         * @return void
+         */
+        public function shortcode_menu_view()
+        {
+        }
+        /**
+         * tools view
+         *
+         * @return void
+         */
+        public function tools_menu_view()
+        {
+        }
+    }
+}
+namespace WpCafe\Core\Shortcodes {
+    /**
+     * create post type class
+     */
+    class Hook
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        public $wpc_message = '';
+        public $wpc_cart_css = '';
+        /**
+         * call hooks
+         */
+        public function init()
+        {
+        }
+        /**
+         * Add hook for ajax add to cart
+         */
+        public function add_woocommerce_template_loop_add_to_cart()
+        {
+        }
+        /**
+         * Create a shortcode to render the reservation form.
+         * Print the reservation form's HTML code.
+         */
+        public function reservation_shortcode($atts)
+        {
+        }
+        /**
+         * Food menu shortcode
+         */
+        public function wpc_food_menu_tab($atts)
+        {
+        }
+        /**
+         * Food menu list block
+         */
+        public function wpc_food_menu_list($atts)
+        {
+        }
+        /**
+         * menu of the popup
+         *
+         */
+        public function wpc_menu_off_the_popup($settings)
+        {
+        }
+        /**
+         * Mini cart for frontend
+         *
+         */
+        public function wpc_custom_mini_cart()
+        {
+        }
+        /**
+         * Cart count  function
+         */
+        public function wpc_add_to_cart_count_fragment_refresh($fragments)
+        {
+        }
+        /**
+         * Cart count  function
+         */
+        public function wpc_add_to_cart_content_fragment_refresh($fragments)
+        {
+        }
+        /**
+         * Location field in checkout form
+         */
+        public function wpc_location_checkout_form()
+        {
+        }
+        /**
+         * Update location select option
+         *
+         * @param [type] $order
+         */
+        public function wpc_location_update_meta($order)
+        {
+        }
+        /**
+         * Category new field for set priority
+         */
+        public function wpc_product_cat_taxonomy_add_new_meta_field()
+        {
+        }
+        /**
+         * Category edit field for set priority
+         */
+        public function wpc_product_cat_taxonomy_edit_meta_field($term)
+        {
+        }
+        /**
+         * Category save field for set priority
+         */
+        public function wpc_product_cat_taxonomy_save_meta_field($term_id)
+        {
+        }
+        /**
+         * Order menu column added to category admin screen.
+         */
+        public function wpc_custom_fields_list_title($columns)
+        {
+        }
+        /**
+         * Order menu column value added to product category admin screen.
+         */
+        public function wpc_custom_fields_list_diplay($columns, $column, $id)
+        {
+        }
+        /**
+         * Custom inline css
+         */
+        public function wpc_custom_inline_css()
+        {
+        }
+        /**
+         * Food by location
+         */
+        public function food_location_menu($atts)
+        {
+        }
+        /**
+         * Create a shortcode to render the food location filter.
+         * Print the food location filter HTML code.
+         */
+        public function food_location_filter($atts)
+        {
+        }
+        /**
+         * add extra content like tax, shipping, total only in minicart
+         *
+         * @return void
+         */
+        public function before_minicart_buttons_add_extra_content()
+        {
+        }
+        /**
+         * Location field in checkout form for gutenblock shortcode
+         */
+        public function wpc_location_checkout_block()
+        {
+        }
+        function add_wpc_product_type_in_wc_product_meta($types)
+        {
+        }
+        public function save_wpc_product_meta($post_ID)
+        {
+        }
+    }
+    class Template_Functions
+    {
+        /**
+         * Food Menu List Template One
+         */
+        public static function wpc_food_menu_list_template($args)
+        {
+        }
+        /**
+         * Food Menu List Template Two
+         */
+        public static function wpc_food_menu_list_template_two($args)
+        {
+        }
+        /**
+         * Food Menu List Template Three
+         */
+        public static function wpc_food_menu_list_template_three($args)
+        {
+        }
+        /**
+         * Food tab list
+         *
+         * @param [type] $food_menu_tabs
+         * @return void
+         */
+        public static function render_food_menu_tab_nav($food_menu_tabs)
+        {
+        }
+        /**
+         * Render Food Menu Tab Holder Markup
+         *
+         * @param [type] $active_class
+         * @param [type] $content_key
+         * @param [type] $cat_id
+         * @param [type] $unique_id
+         * @param [type] $products
+         * @param [type] $style
+         * @param [type] $wpc_cart_button
+         * @param [type] $wpc_show_desc
+         * @param [type] $show_thumbnail
+         * @param [type] $title_link_show
+         * @param [type] $show_item_status
+         * @param [type] $wpc_desc_limit
+         * 
+         * @since 1.3.3
+         * 
+         * @return html markup
+         */
+        public static function render_food_menu_tab_product_block($args)
+        {
+        }
+        public static function modal_markup($wpc_locations, $store_id = null)
+        {
+        }
+    }
+}
+namespace Wpmet\Libs {
+    class Banner
+    {
+        protected $script_version = '2.1.0';
+        protected $key = 'wpmet_banner';
+        protected $data;
+        protected $last_check;
+        protected $check_interval = 3600 * 6;
+        protected $plugin_screens;
+        protected $text_domain;
+        protected $filter_string;
+        protected $filter_array = [];
+        protected $api_url;
+        public function get_version()
+        {
+        }
+        public function get_script_location()
+        {
+        }
+        public function call()
+        {
+        }
+        public function display_content()
+        {
+        }
+        public function is_test($is_test = false)
+        {
+        }
+        public function set_text_domain($text_domain)
+        {
+        }
+        public function set_filter($filter_string)
+        {
+        }
+        public function set_api_url($url)
+        {
+        }
+        public function set_plugin_screens($screen)
+        {
+        }
+        public function is_correct_screen_to_show($b_screen, $screen_id)
+        {
+        }
+        public static function instance($text_domain = '')
+        {
+        }
+    }
+}
+namespace Oxaim\Libs {
+    class Notice
+    {
+        /**
+         * scripts version
+         *
+         * @var string
+         */
+        protected $script_version = '2.1.1';
+        /**
+         * Unique ID to identify each notice
+         *
+         * @var string
+         */
+        protected $notice_id;
+        /**
+         * Plugin text-domain
+         *
+         * @var string
+         */
+        protected $text_domain;
+        /**
+         * Unique ID
+         *
+         * @var string
+         */
+        protected $unique_id;
+        /**
+         * Notice div container's class
+         *
+         * @var string
+         */
+        protected $class;
+        /**
+         * Single button's data
+         *
+         * @var array
+         */
+        protected $button;
+        /**
+         * Size class
+         *
+         * @var array
+         */
+        protected $size;
+        /**
+         * List of all buttons with it's config data
+         *
+         * @var array
+         */
+        protected $buttons;
+        /**
+         * Notice title
+         *
+         * @var string
+         */
+        protected $title;
+        /**
+         * Notice message
+         *
+         * @var string
+         */
+        protected $message;
+        /**
+         * Left logo
+         *
+         * @var string
+         */
+        protected $logo;
+        /**
+         * Container gutter
+         *
+         * @var string
+         */
+        protected $gutter;
+        /**
+         * Left logo style
+         *
+         * @var string
+         */
+        protected $logo_style;
+        /**
+         * Left logo style
+         *
+         * @var string
+         */
+        protected $dismissible;
+        protected $expired_time;
+        /**
+         * html markup for notice
+         *
+         * @var string
+         */
+        protected $html;
+        /**
+         * get_version
+         *
+         * @return string
+         */
+        public function get_version()
+        {
+        }
+        /**
+         * get_script_location
+         *
+         * @return string
+         */
+        public function get_script_location()
+        {
+        }
+        // config
+        /**
+         * Configures all setter variables
+         *
+         * @param  string $prefix
+         * @return void
+         */
+        public function config($text_domain = '', $unique_id = '')
+        {
+        }
+        // setters begin
+        /**
+         * Adds classes to the container
+         *
+         * @param  string $classname
+         * @return void
+         */
+        public function set_class($classname = '')
+        {
+        }
+        public function set_type($type = '')
+        {
+        }
+        public function set_button($button = [])
+        {
+        }
+        public function set_id($id)
+        {
+        }
+        public function set_title($title = '')
+        {
+        }
+        public function set_message($message = '')
+        {
+        }
+        public function set_gutter($gutter = true)
+        {
+        }
+        public function set_logo($logo = '', $logo_style = "")
+        {
+        }
+        public function set_html($html = '')
+        {
+        }
+        // setters ends
+        // group getter
+        public function get_data()
+        {
+        }
+        public function call()
+        {
+        }
+        public function get_notice()
+        {
+        }
+        public function set_dismiss($scope = 'global', $time = 3600 * 24 * 7)
+        {
+        }
+        public function generate_html()
+        {
+        }
+        public static function init()
+        {
+        }
+        public static function dismiss_ajax_call()
+        {
+        }
+        public static function enqueue_scripts()
+        {
+        }
+        /**
+         * Method: instance -> Return Notice module class instance
+         *
+         * @param string|null $text_domain
+         * @param string|null $unique_id
+         * @return mixed
+         */
+        public static function instance($text_domain = null, $unique_id = null)
+        {
+        }
+    }
+}
+namespace Wpmet\Libs {
+    class Pro_Awareness
+    {
+        protected $script_version = '1.0.3';
+        /**
+         * Get version of this script
+         *
+         * @return string Version name
+         */
+        public function get_version()
+        {
+        }
+        /**
+         * Get current directory path
+         *
+         * @return string
+         */
+        public function get_script_location()
+        {
+        }
+        public static function instance($text_domain)
+        {
+        }
+        protected function set_text_domain($val)
+        {
+        }
+        public function set_parent_menu_text($text)
+        {
+        }
+        public function set_default_grid_link($url)
+        {
+        }
+        public function set_default_grid_title($title)
+        {
+        }
+        public function set_default_grid_desc($title)
+        {
+        }
+        public function set_default_grid_thumbnail($thumbnail)
+        {
+        }
+        public function set_parent_menu_slug($slug)
+        {
+        }
+        public function set_menu_slug($slug)
+        {
+        }
+        public function set_plugin_file($plugin_file)
+        {
+        }
+        public function set_pro_link($url, $conf = [])
+        {
+        }
+        /**
+         * Set page grid
+         */
+        public function set_page_grid($conf = [])
+        {
+        }
+        /**
+         * @deprecated This method will be removed
+         */
+        public function set_grid($conf = [])
+        {
+        }
+        protected function prepare_pro_links()
+        {
+        }
+        protected function prepare_grid_links()
+        {
+        }
+        public function generate_grids()
+        {
+        }
+        public static function enqueue_scripts()
+        {
+        }
+        public function insert_plugin_links($links)
+        {
+        }
+        public function insert_plugin_row_meta($links, $file)
+        {
+        }
+        public function set_plugin_action_link($text, $link, $attr = [])
+        {
+        }
+        public function set_plugin_row_meta($text, $link, $attr = [])
+        {
+        }
+        public function generate_menus()
+        {
+        }
+        public static function init()
+        {
+        }
+        public function call()
+        {
+        }
+    }
+}
+namespace WpCafe\Utils {
+    /**
+     * All  helper functions to use 
+     */
+    class Wpc_Utilities
+    {
+        /**
+         * Html markup validation
+         */
+        public static function wpc_kses($raw)
+        {
+        }
+        /**
+         * Html markup validation
+         */
+        public static function wpc_kses_allowed_tags()
+        {
+        }
+        /**
+         * Auto generate class name from path.
+         */
+        public static function make_classname($dirname)
+        {
+        }
+        public static function kspan($text)
+        {
+        }
+        /**
+         * Seat count min , max limit
+         */
+        public static function get_seat_count_limit()
+        {
+        }
+        /**
+         * Reservation status array
+         */
+        public static function get_reservation_states()
+        {
+        }
+        /**
+         * Generate invoice no.
+         */
+        public static function generate_invoice_number($post_id)
+        {
+        }
+        /**
+         * Email sending function
+         *
+         * @param array $args = [$to, $subject, $mail_body, $from, $from_name].
+         */
+        public static function wpc_send_email($args)
+        {
+        }
+        /**
+         * Show Notices
+         */
+        public static function push($notice)
+        {
+        }
+        /**
+         * Markup Notice.
+         */
+        public static function pro_banner_markup($notice = [])
+        {
+        }
+        /**
+         * Markup Notice.
+         */
+        public static function markup($notice = [])
+        {
+        }
+        /**
+         * Render html.
+         */
+        public static function wpc_render($content)
+        {
+        }
+        /**
+         * Render numeric value.
+         */
+        public static function wpc_numeric($content)
+        {
+        }
+        /**
+         *  Check nonce validation of submit data
+         */
+        public static function is_secured($nonce_field, $action, $post)
+        {
+        }
+        /**
+         * Menu category
+         */
+        public static function get_menu_category($id = null)
+        {
+        }
+        /**
+         * content crop function
+         */
+        public static function wpcafe_trim_words($content, $count = 150, $readmore = null)
+        {
+        }
+        public static function get_location_data($default_options = "", $no_options = "", $value_type = "key", $number = false)
+        {
+        }
+        /**
+         * Location feature function
+         */
+        public static function get_location_details()
+        {
+        }
+        /**
+         * Show tag function
+         */
+        public static function wpc_tag($id, $stock_status)
+        {
+        }
+        /**
+         * Product query
+         * @param array $args = [ $post_type, $no_of_product, $wpc_cat, $order, $page, $total_count, $search_value, $taxonomy ]
+         */
+        public static function product_query($params)
+        {
+        }
+        /**
+         * Add to cart button based on product type
+         *
+         * @param [type] $args [ $product, $cart_button, $wpc_btn_text='', $customize_btn= '', $widget_id=''].
+         */
+        public static function product_add_to_cart($args)
+        {
+        }
+        public static function qr_code_input()
+        {
+        }
+        /**
+         * Get variation price
+         */
+        public static function get_variation_price($product)
+        {
+        }
+        /**
+         * email to admin & user for new booking request
+         */
+        public static function send_notification_admin_user($settings, $args)
+        {
+        }
+        /**
+         * send email to branch for new booking request
+         */
+        public static function send_notification_branch_user($settings, $args)
+        {
+        }
+        /**
+         * Menu price by tax for short code and widget
+         */
+        public static function menu_price_by_tax($product)
+        {
+        }
+        /**
+         * Admin page array
+         */
+        public static function admin_page_array()
+        {
+        }
+        /**
+         * Get Tab Array From Category List
+         *
+         * @param [type] $wpc_cat_arr
+         *
+         * @since 1.3.3
+         *
+         * @return array tab array
+         */
+        public static function get_tab_array_from_category($wpc_cat_arr)
+        {
+        }
+        /**
+         * get_category id
+         *
+         * @param [type] $order_id
+         * @param [type] $order
+         *
+         * @since 2.4.1
+         *
+         * @return void
+         */
+        public static function get_wpc_taxonomy_ids($taxonomy = 'product_cat', $shortcode_cat = "cat_id")
+        {
+        }
+        /**
+         * Replace qoute of sting
+         */
+        public static function replace_qoute($data)
+        {
+        }
+        /**
+         * shortcode builder option range
+         */
+        public static function get_option_range($arr = [], $class = "")
+        {
+        }
+        /**
+         * shortcode builder hide empty
+         */
+        public static function get_show_hide($key)
+        {
+        }
+        /**
+         * shortcode builder hide empty
+         */
+        public static function get_order($key)
+        {
+        }
+        /**
+         * shortcode builder style
+         */
+        public static function get_option_style($limit, $value_name, $option_name = "", $display_name = "")
+        {
+        }
+        /**
+         * shortcode builder price options
+         */
+        public static function get_price_option($key)
+        {
+        }
+        /**
+         * Get Cafe options key
+         *
+         * @param [type] $key
+         * @param string $default
+         * @return void
+         */
+        public static function get_option($key, $default = '')
+        {
+        }
+        /**
+         * discard empty field from settings
+         *
+         * @param array $form_data
+         * @param string $setting_keys
+         * @return array empty field discarded settings
+         */
+        public static function discard_individual_empty_fields_from_settings($form_data = [], $setting_keys = [])
+        {
+        }
+        /**
+         * discard empty field from two dependent/related settings
+         *
+         * @param array $form_data
+         * @param string $related_two_setting_keys
+         * @return array two dependent/related empty field discarded settings content
+         */
+        public static function discard_two_related_empty_fields_from_settings($form_data = [], $related_two_setting_keys = [])
+        {
+        }
+        /**
+         * discard empty field from three dependent/related settings
+         *
+         * @param array $form_data
+         * @param string $related_three_setting_keys
+         * @return array three dependent/related empty field discarded settings content
+         */
+        public static function discard_three_related_empty_fields_from_settings($form_data = [], $related_three_setting_keys = [])
+        {
+        }
+        /**
+         * discard empty field from four dependent/related settings
+         *
+         * @param array $form_data
+         * @param string $related_four_setting_keys
+         * @return array four dependent/related empty field discarded settings content
+         */
+        public static function discard_four_related_empty_fields_from_settings($form_data = [], $related_four_setting_keys = [])
+        {
+        }
+        /**
+         * discard empty field from five dependent/related settings
+         *
+         * @param array $form_data
+         * @param string $related_five_setting_keys
+         * @return array five dependent/related empty field discarded settings content
+         */
+        public static function discard_five_related_empty_fields_from_settings($form_data = [], $related_five_setting_keys = [])
+        {
+        }
+        /**
+         * generate shortcode button
+         */
+        public static function generate_shortcode_button($label_text, $desc = "")
+        {
+        }
+        /**
+         * generate shortcode button popup
+         */
+        public static function generate_shortcode_button_popup($value, $input_id)
+        {
+        }
+        /**
+         * generate shortcode button popup
+         */
+        public static function generate_shortcode_show_hide($label_text, $show_hide_key)
+        {
+        }
+        /**
+         * check selected date format is valid or not: if not update with cafe default format
+         *
+         * @return void
+         */
+        public static function check_date_format_is_valid()
+        {
+        }
+        /**
+         * select food locations
+         *
+         * @return void
+         */
+        public static function select_food_locations_filter($atts)
+        {
+        }
+        /**
+         * select food locations
+         *
+         * @return void
+         */
+        public static function get_pro()
+        {
+        }
+        public static function get_query_cache($query)
+        {
+        }
+        public static function get_formatted_time($timeString)
+        {
+        }
+        public static function get_formatted_date($dateString)
+        {
+        }
+        public static function wpc_product_exist_in_cart()
+        {
+        }
+    }
+}
+namespace WpCafe\Widgets {
+    class Manifest
+    {
+        use \WpCafe\Traits\Wpc_Singleton;
+        public function init()
+        {
+        }
+        public function get_input_widgets()
+        {
+        }
+        public function includes()
+        {
+        }
+        /**
+         * Register all elementor widgets dynamically
+         */
+        public function register_widgets()
+        {
+        }
+        public function add_elementor_widget_categories($elements_manager)
+        {
+        }
+    }
+}
+namespace WpCafe\Widgets\Wpc_Food_Location_Filter {
+    class Wpc_Food_Location_Filter extends \Elementor\Widget_Base
+    {
+        /**
+         * Retrieve the widget name.
+         * @return string Widget name.
+         */
+        public function get_name()
+        {
+        }
+        /**
+         * Retrieve the widget title.
+         * @return string Widget title.
+         */
+        public function get_title()
+        {
+        }
+        /**
+         * Retrieve the widget icon.
+         * @return string Widget icon.
+         */
+        public function get_icon()
+        {
+        }
+        /**
+         * Retrieve the widget category.
+         * @return string Widget category.
+         */
+        public function get_categories()
+        {
+        }
+        protected function register_controls()
+        {
+        }
+        protected function render()
+        {
+        }
+    }
+}
+namespace WpCafe\Widgets\Wpc_Food_Menu_Tab {
+    class Wpc_Food_Location extends \Elementor\Widget_Base
+    {
+        /**
+         * Retrieve the widget name.
+         * @return string Widget name.
+         */
+        public function get_name()
+        {
+        }
+        /**
+         * Retrieve the widget title.
+         * @return string Widget title.
+         */
+        public function get_title()
+        {
+        }
+        /**
+         * Retrieve the widget icon.
+         * @return string Widget icon.
+         */
+        public function get_icon()
+        {
+        }
+        /**
+         * Retrieve the widget category.
+         * @return string Widget category.
+         */
+        public function get_categories()
+        {
+        }
+        protected function register_controls()
+        {
+        }
+        protected function render()
+        {
+        }
+        protected function get_menu_category()
+        {
+        }
+    }
+    class Wpc_Food_Menu_Tab extends \Elementor\Widget_Base
+    {
+        /**
+         * Retrieve the widget name.
+         * @return string Widget name.
+         */
+        public function get_name()
+        {
+        }
+        /**
+         * Retrieve the widget title.
+         * @return string Widget title.
+         */
+        public function get_title()
+        {
+        }
+        /**
+         * Retrieve the widget icon.
+         * @return string Widget icon.
+         */
+        public function get_icon()
+        {
+        }
+        /**
+         * Retrieve the widget category.
+         * @return string Widget category.
+         */
+        public function get_categories()
+        {
+        }
+        protected function register_controls()
+        {
+        }
+        protected function render()
+        {
+        }
+        protected function get_menu_category()
+        {
+        }
+    }
+}
+namespace WpCafe\Widgets\Wpc_Location_Menu {
+    class Wpc_Location_Menu extends \Elementor\Widget_Base
+    {
+        /**
+         * Retrieve the widget name.
+         * @return string Widget name.
+         */
+        public function get_name()
+        {
+        }
+        /**
+         * Retrieve the widget title.
+         * @return string Widget title.
+         */
+        public function get_title()
+        {
+        }
+        /**
+         * Retrieve the widget icon.
+         * @return string Widget icon.
+         */
+        public function get_icon()
+        {
+        }
+        /**
+         * Retrieve the widget category.
+         * @return string Widget category.
+         */
+        public function get_categories()
+        {
+        }
+        protected function register_controls()
+        {
+        }
+        protected function render()
+        {
+        }
+        protected function get_menu_category()
+        {
+        }
+    }
+}
+namespace WpCafe\Widgets\Wpc_Menus_list {
+    class Wpc_Menus_List extends \Elementor\Widget_Base
+    {
+        /**
+         * Retrieve the widget name.
+         * @return string Widget name.
+         */
+        public function get_name()
+        {
+        }
+        /**
+         * Retrieve the widget title.
+         * @return string Widget title.
+         */
+        public function get_title()
+        {
+        }
+        /**
+         * Retrieve the widget icon.
+         * @return string Widget icon.
+         */
+        public function get_icon()
+        {
+        }
+        /**
+         * Retrieve the widget category.
+         * @return string Widget category.
+         */
+        public function get_categories()
+        {
+        }
+        protected function register_controls()
+        {
+        }
+        protected function render()
+        {
+        }
+        protected function get_menu_category()
+        {
+        }
+    }
+}
+namespace WpCafe\Widgets\Wpc_Resevation_Form {
+    class Wpc_Resevation_Form extends \Elementor\Widget_Base
+    {
+        /**
+         * Retrieve the widget name.
+         * @return string Widget name.
+         */
+        public function get_name()
+        {
+        }
+        /**
+         * Retrieve the widget title.
+         * @return string Widget title.
+         */
+        public function get_title()
+        {
+        }
+        /**
+         * Retrieve the widget icon.
+         * @return string Widget icon.
+         */
+        public function get_icon()
+        {
+        }
+        /**
+         * Retrieve the widget category.
+         * @return string Widget category.
+         */
+        public function get_categories()
+        {
+        }
+        protected function register_controls()
+        {
+        }
+        protected function render()
+        {
+        }
+        protected function get_menu_category()
+        {
+        }
+    }
+}
+namespace {
+    final class Wpcafe
+    {
+        /**
+         * Plugin Version
+         *
+         * @since 1.3.9
+         *
+         * @var string The plugin version.
+         */
+        static function version()
+        {
+        }
+        /**
+         * Initializes the Wpcafe() class
+         *
+         * Checks for an existing Wpcafe() instance
+         * and if it doesn't find one, creates it.
+         */
+        public static function init()
+        {
+        }
+        /**
+         * Load Textdomain
+         *
+         * Load plugin localization files.
+         * Fired by `init` action hook.
+         *
+         */
+        public function i18n()
+        {
+        }
+        /**
+         * Initialize Modules
+         *
+         * @since 1.3.9
+         */
+        public function initialize_modules()
+        {
+        }
+        /**
+         * Assets Directory Url
+         *
+         * @return void
+         */
+        public static function assets_url()
+        {
+        }
+        /**
+         * Assets Folder Directory Path
+         *
+         * @since 1.3.9
+         *
+         * @return void
+         */
+        public static function assets_dir()
+        {
+        }
+        /**
+         * Plugin Core File Directory Url
+         *
+         * @since 1.3.9
+         *
+         * @return void
+         */
+        public static function core_url()
+        {
+        }
+        /**
+         * Plugin Core File Directory Path
+         *
+         * @since 1.3.9
+         *
+         * @return void
+         */
+        public static function core_dir()
+        {
+        }
+        /**
+         * Plugin Url
+         *
+         * @since 1.3.9
+         *
+         * @return void
+         */
+        public static function plugin_url()
+        {
+        }
+        /**
+         * Plugin Directory Path
+         *
+         * @since 1.3.9
+         *
+         * @return void
+         */
+        public static function plugin_dir()
+        {
+        }
+        /**
+         * Plugins Basename
+         *
+         * @since 1.3.9
+         */
+        public static function plugins_basename()
+        {
+        }
+        /**
+         * Plugin File
+         *
+         * @since 1.3.9
+         *
+         * @return void
+         */
+        public static function plugin_file()
+        {
+        }
+    }
+}
+namespace {
+    /**
+     * Load Wpcafe Addon when all plugins are loaded
+     *
+     * @return Wpcafe
+     */
+    function wpcafe()
+    {
+    }
+}
