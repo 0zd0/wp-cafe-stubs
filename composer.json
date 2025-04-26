@@ -1,0 +1,55 @@
+{
+    "name": "onepix/wp-cafe-stubs",
+    "description": "Stubs for the WP Cafe plugin for static analysis",
+    "license": "MIT",
+    "keywords": [
+        "wordpress",
+        "dokan",
+        "static analysis",
+        "phpstan",
+        "psalm"
+    ],
+    "homepage": "https://github.com/0zd0/wp-cafe-stubs",
+    "require-dev": {
+        "php": "^8.1",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "onepix/wordpress-stubs-generator": "*",
+        "phpunit/phpunit": "^9.6",
+        "phpstan/phpstan": "^1.10",
+        "onepix/wordpress-hooks-stub-generator": "*"
+    },
+    "minimum-stability": "stable",
+    "autoload-dev": {
+        "psr-4": {
+            "Onepix\\Stubs\\WPCafe\\": "src/"
+        },
+        "classmap": [
+            "tests/"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "onepix/wordpress-stubs-generator": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "platform": {
+            "php": "8.1.0"
+        }
+    },
+    "scripts": {
+        "cleanup": "git status --short --ignored | sed -n -e 's#^!! ##p' | xargs -r rm -vrf",
+        "test": [
+            "@test:phpunit",
+            "@test:phpstan",
+            "@cs"
+        ],
+        "cs": "php-cs-fixer fix --verbose --dry-run",
+        "cs:fix": "php-cs-fixer fix",
+        "test:phpstan": "phpstan analyze",
+        "test:phpunit": "phpunit",
+        "generate": "bash ./generate.sh"
+    },
+    "scripts-descriptions": {
+        "cleanup": "Remove all ignored files."
+    }
+}
